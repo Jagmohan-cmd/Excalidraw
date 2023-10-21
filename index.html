@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <title>Excalidraw</title>
+    <link rel="shortcut icon" href="https://avatars.githubusercontent.com/u/59452120?s=280&v=4" type="image/x-icon">
+</head>
+<body>
+    <div id="full">
+    <nav>
+        <button title="menu" id="menu"><i class="fa-solid fa-bars"></i></button>
+        <div id="tools">
+            <button title="Keep selected tool active after drawing -- Q" id="lock" class="tools-icon"><i class="fa-solid fa-unlock-keyhole"></i></button>
+
+            <div class="line-in-icons"></div>
+
+            <button title="Hand (panning tool) -- H" id="hand" class="tools-icon"><i class="fa-regular fa-hand"></i></button>
+
+            <button title="Selestion -- V or 1" id="arrow" class="tools-icon"><i class="fa-solid fa-arrow-pointer"></i><p>1</p></button>
+
+            <button title="Rectangle -- R or 2" id="rectangle" class="tools-icon"><i class="fa-regular fa-square"></i><p>2</p></button>
+
+            <button title="Diamond -- D or 3" id="diamond" class="tools-icon"><i class="fa-solid fa-diamond"></i><p>3</p></button>
+
+            <button title="Ellipse -- E or 4" id="ellipse" class="tools-icon"><i class="fa-regular fa-circle"></i><p>4</p></button>
+
+            <button title="Arrow -- A or 5" id="arrow-right" class="tools-icon"><i class="fa-solid fa-arrow-right-long"></i><p>5</p></button>
+
+            <button title="Line -- L or 6" id="line" class="tools-icon">--- <p>6</p></button>
+
+            <button title="Draw -- P or 7" id="pencil" class="tools-icon"><i class="fa-solid fa-pencil"></i><p>7</p></button>
+
+            <button title="Text -- T or 8" id="text" class="tools-icon"><i class="fa-solid fa-font"></i><p>8</p></button>
+
+            <button title="Insert image -- 9" id="image" class="tools-icon"><i class="fa-regular fa-image"></i><p>9</p></button>
+
+            <button title="Eraser -- E or 0" id="eraser" class="tools-icon"><i class="fa-solid fa-eraser"></i><p>0</p></button>
+
+            <div class="line-in-icons"></div>
+
+            <button title="More tools" id="more-tools" class="tools-icon"><i class="fa-solid fa-screwdriver-wrench"></i></button>
+
+        </div>
+
+        <div id="nav-right">
+            <button title="Live collaboration..." id="live-col"><i class="fa-solid fa-user-group"></i></button>
+            <button title="Library" id="library"><i class="fa-solid fa-book-open"></i> Library</button>
+        </div>
+
+
+    </nav>
+    <canvas id="canvas">
+
+    </canvas>
+
+    <!--///////////////////////////////////////// nav is ended here ///////////////////////////////-->
+
+    <div id="menu-click">
+        <div id="open" class="box" title="Open">
+            <div id="left"><i class="fa-regular fa-folder"></i>Open</div>
+            <div id="right" class="right">Ctrl+O</div>
+        </div>
+        <div id="save" class="box" title="Save to...">
+            <div id="left"><i class="fa-solid fa-download"></i> Save to...</div>
+            <div id="right" class="right"></div>
+        </div>
+        <div id="export-image" class="box" title="Export image...">
+            <div id="left"><i class="fa-regular fa-images"></i> Export image...</div>
+            <div id="right" class="right">Ctrl+Shift+E</div>
+        </div>
+        <div id="live-collaboration" class="box">
+            <div id="left"><i class="fa-solid fa-user-group"></i> live collaboration...</div>
+            <div id="right" class="right"></div>
+        </div>
+        <div id="help" class="box" title="Help">
+            <div id="left"><i class="fa-regular fa-circle-question"></i> Help</div>
+            <div id="right" class="right">?</div>
+        </div>
+        <div id="help" class="box" title="Reset the canvas">
+            <div id="left"><i class="fa-solid fa-trash-can"></i> Reset the canvas</div>
+            <div id="right" class="right"></div>
+        </div>
+
+        <div class="line"></div>
+
+        <div id="excalidraw" class="box" title="Excalidraw+">
+            <div id="left" class="pink"><i class="fa-solid fa-gift"></i> Excalidraw+</div>
+            <div id="right" class="right"></div>
+        </div>
+        <div id="github" class="box" title="GitHub">
+            <div id="left"><i class="fa-brands fa-github"></i> GitHub</div>
+            <div id="right" class="right"></div>
+        </div>
+        <div id="discord" class="box" title="Discord">
+            <div id="left"><i class="fa-brands fa-discord"></i> Discord</div>
+            <div id="right" class="right"></div>
+        </div>
+        <div id="twitter" class="box" title="Twitter">
+            <div id="left"><i class="fa-brands fa-twitter"></i> Twitter</div>
+            <div id="right" class="right"></div>
+        </div>
+
+        <div class="line"></div>
+
+        <div id="dark" class="box">
+            <div id="left" title="Dark mode"><i class="fa-regular fa-moon"></i> Dark mode</div>
+            <div id="right" class="right">Shift+Alt+D</div>
+        </div>
+
+        <select name="select" id="select">
+            <option value="English">English</option>
+            <option value="Hindi">Hindi</option>
+            <option value="Punjabi">Punjabi</option>
+            <option value="Marathi">Marathi</option>
+        </select>
+
+        <div id="canvas">
+            <p>Canvas background</p>
+            <div id="bg-colors">
+                <div title="#ffffff" class="bg-color bg-color-white"><div class="inner"></div></div>
+                <div title="#f8f9fa" class="bg-color bg-color-gray"><div class="inner"></div></div>
+                <div title="#f5faff" class="bg-color bg-color-lightGreen"><div class="inner"></div></div>
+                <div title="#fffce8" class="bg-color bg-color-lightPink"><div class="inner"></div></div>
+                <div title="#fdf8f6" class="bg-color bg-color-veryLightPink"><div class="inner"></div></div>
+                <!-- <div class="bg-color-big"><div class="inner"></div></div> -->
+                <input type="color" name="bg-color-selector" id="bg-selector">
+            </div>
+        </div>
+
+    </div>
+ 
+    
+    <!--////////////////////////////////// main-click is ended here ///////////////////////////////////////-->
+ 
+    <footer>
+        <div id="left"> 
+            <div id="size-container">
+                <div title="Zoom out -- Ctrl +-" id="minus"><i class="fa-solid fa-minus"></i></div>
+                <div title="Reset zoom" id="size-per"><div id="size">100</div> <div id="per">%</div></div>
+                
+                <div title="Zoom in -- Ctrl ++" id="plus"><i class="fa-solid fa-plus"></i></div>
+            </div>
+            <div id="undo-redo">
+                <div title="Undo" id="undo"><img src="https://www.svgrepo.com/download/130862/undo-arrow.svg" alt="undo"></div>
+                <div title="Redo" id="redo"><img src="https://www.svgrepo.com/show/375084/redo.svg" alt="redo"></div>
+            </div>
+        </div>
+
+        <div id="right">
+            <div id="footer-img"><i class="fa-solid fa-shield-heart" style="color: #6965db;"></i></div>
+            <div title="Help -- ?" id="help"><i class="fa-regular fa-circle-question"></i></div>
+        </div>
+    </footer>
+</div>
+    
+    <script src="index.js"></script>
+    <script src="pencil.js"></script>
+</body>
+</html>
