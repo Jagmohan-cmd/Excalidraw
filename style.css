@@ -12,9 +12,7 @@
     padding: 0px;
     margin: 0px;
 }
-/* body{
-    background-color: var(--bg-color-gray);
-} */
+
 
 #full{
     width: 100vw;
@@ -160,10 +158,9 @@ nav #tools .active-icons{
 }
 
 
-/* /////////////////////////////////////// Canvas is ended here ////////////////////////////////////////// */
+/* /////////////////////////////////////// menu-click is started here ////////////////////////////////////////// */
 #menu-click.active-menu{
     display: block;
-    
 }
 
 
@@ -285,6 +282,144 @@ nav #tools .active-icons{
 
 /*/////////////////////////////////////////// menu-click is ended here //////////////////////////////////*/
 
+.drawingPencil{
+    background-color: white;
+    width: 15vw;
+    height: 30vh;
+    /* display: block; */
+    display: none;
+    position: fixed;
+    top: 8%;
+    left: 18px;
+    box-sizing: border-box;
+    padding: 10px;
+    border-radius: 8px;
+    box-shadow: 1px 1px 10px 1px rgb(235, 235, 235);
+}
+
+.drawingPencil.activePencil{
+    display: block;
+}
+
+.drawingPencil #stroke{
+    display: flex;
+    padding: 5px;
+    gap: 10px;
+    flex-direction: column;
+}
+
+.drawingPencil #strokeWidth{
+    padding: 5px;
+    gap: 10px;
+    display: flex;
+    flex-direction: column;
+}
+
+
+.drawingPencil p{
+    color: #444444;
+    font-size: 0.8rem;
+
+}
+
+.drawingPencil #chooseColors{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+
+.drawingPencil #chooseColors .pencilColor{
+    height: 3.5vh;
+    width: 1.6vw;
+    padding: 0.5%;
+    border-radius: 3px;
+    margin: 3px;
+}
+
+.drawingPencil #chooseColors .pencilColor:hover{
+    border: 1px solid rgb(220, 220, 220);
+}
+
+.drawingPencil #chooseColors .pencilColor .inner{
+    height: 100%;
+    background-color: black;
+    border: 1px solid rgb(220, 220, 220);
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.drawingPencil #chooseColors .pencilColor:active{
+    border: 1px solid blue;
+}
+
+.drawingPencil #chooseColors .penColors-red .inner{
+    background-color: red;
+}
+
+.drawingPencil #chooseColors .penColors-green .inner{
+    background-color: green;
+}
+
+.drawingPencil #chooseColors .penColors-blue .inner{
+    background-color: blue;
+}
+
+.drawingPencil #chooseColors .penColors-orange .inner{
+    background-color: orange;
+}
+
+.drawingPencil #strokeWidth #buttons{
+    display: flex;
+    gap: 10px;
+}
+
+.drawingPencil #strokeWidth #buttons #strokeLine-s{
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawingPencil #strokeWidth #buttons #strokeLine-m{
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawingPencil #strokeWidth #buttons #strokeLine-l{
+    font-size: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.drawingPencil #strokeWidth #buttons .strokeLines{
+    height: 3.5vh;
+    width: 1.6vw;
+    padding: 0.5%;
+    border-radius: 3px;
+    border: none;
+}
+
+.drawingPencil #strokeWidth #buttons .strokeLines:active{
+    border: 1px solid blue;
+}
+
+.drawingPencil #opacity{
+    display: flex;
+    padding: 5px;
+    gap: 5px;
+    flex-direction: column;
+}
+
+
+
+
+
+/* ////////////////////////////////////////// drawing pencil is ended here ////////////////////////////// */
+
 footer{
     position: fixed;
     bottom: 0px;
@@ -328,6 +463,11 @@ footer #left #size-container #minus,#plus{
     cursor: pointer;
 }
 
+footer #left #size-container #minus:active,#plus:active{
+    border: 1px solid blue;
+    border-radius: 8px;
+}
+
 footer #left #size-container #minus:hover,#plus:hover,#size:hover{
     background-color: #f3f3f7;
 }
@@ -364,6 +504,12 @@ footer #left #undo-redo #undo,#redo{
     background-color: #ececf4;
     width: 50%;
     cursor: pointer;
+}
+
+footer #left #undo-redo #undo:active,#redo:active{
+    border: 1px solid blue;
+    border-radius: 8px;
+
 }
 
 footer #left #undo-redo #undo:hover,#redo:hover{
@@ -411,6 +557,11 @@ footer #right #help{
     background-color: #ececf4;
     border-radius: 8px;
     cursor: pointer;
+}
+
+footer #right #help:active{
+    border: 1px solid blue;
+    border-radius: 8px;
 }
 
 footer #right #help i{
